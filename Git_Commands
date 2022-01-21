@@ -98,3 +98,6 @@ git pull
 git fetch --all  //
 git branch -r 
 
+Guide For Reference: 
+https://www.freecodecamp.org/news/git-branch-explained-how-to-delete-checkout-create-and-rename-a-branch-in-git/#checkout-a-branch
+https://git-scm.com/docs/git-fetch
