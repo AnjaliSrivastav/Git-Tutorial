@@ -1,0 +1,100 @@
+Steps Used for merging your branch to another branch(Lengthy Approach but Without Conflicts)
+==================================================================================================
+-> checkout a branch from the branch (feature/CR61_sp2.0) in which you want to merge your code(release/sp_2.10).
+-> now build it and deploy to check it builds successfully in CI.
+-> open these two branches, the ne branch(feature/CR61_sp2.0) and your branch/old one (feature/CR061_64) into two workspace.
+-> collect all the folders/files which you have changed or created in your branch.
+
+-> In new branch :
+==========================
+-> run the commands : (1)git pull (2)git fetch --all (3) git branch -r
+-> copy those folders and in case of common files (which are used in other modules), do not copy the file directly, put only your changes in the file.
+-> now build your specific module in local to ensure no compile time error comes.
+-> similary In projects(db_serviceconfiguration/db_cprreplica), checkout a new branch from the branch which is related to (release/sp_2.10).
+-> repeat steps(3,4,5,6) here and change the version of pom. Use the same version in pom of new branch(feature/CR61_sp2.0).
+->if it builds successfully in local, commit the changes,push it and build it.
+
+
+## To clear te console of git 
+==================================
+Use a shortcut key (CTRL + L in my case) or the command input box to execute "Terminal: Clear"
+
+
+1.use command : git reset // the index should be restored to the contents of the latest commit
+
+git add <filename> ->to adda file b/f commit
+git commit -m "msg"
+git pull origin <branch_name>
+git push origin <branch_name>
+git checkout -- <Full File name>  -> to revert the changes in a file
+
+git push origin feature/cr-109_persondataservice_v2
+git pull origin feature/cr-109_persondataservice_v2
+git status --> before every pull or push
+git stash ->to revert
+git add <filename> ->to adda file b/f commit
+git clean -fx ==> to clean/delete files
+git clean -fd ==>to delete folders
+
+
+To remove all untracked files, The simple way is to add all of them first and reset the repo as below
+=============================================================================================================
+-> git add --all
+-> git reset --hard HEAD
+
+//When switch from one branch to another
+1.git pull
+2.checkout/create new branch
+
+
+############################## When clone a new project #######################################
+first clone than create a branch like below.
+-> feature/cr-109_persondataservicev2
+then code changes and then mvn clean install to verify build
+Push to git --> git push origin feature/cr-109_persondataservicev2
+git branch --> tocheck your current branch
+git checkout master --> to switch to master branch
+git pull origin master -> to take pull from master branch
+
+git branch -D feature/CR_77_Send_mail_Security //to delete a branch locally
+
+git clone <url of the central repository>/<Folder in which you want to clone locally>
+
+//IF YOU ARE UNABLE TO PUSH/PULL DUE TO ACCESS TOKEN
+===========================================================
+STEPS:
+======= 
+Git remote -v
+git remote add origin <central repository url>
+
+git reset --hard b470a2784f13f32d282549fb470ec3af61bd1b44
+git push origin feature/CR061_DBQuery --force
+
+
+git reset --hard b470a2784f13f32d282549fb470ec3af61bd1b44
+git push origin feature/CR061_DBQuery --force
+
+
+## To update the feature branch
+===================================
+The following steps should be all that is required for updating a feature branch:
+git pull
+git merge origin/master  or git merge origin/<parent branch>
+git push
+
+
+
+git checkout<branch_name from which you need to merge> <file/package path> //If you want to merge a particular file or folder
+
+###Renaming the branch
+=============================
+feature/CR61_sp2.10_CPRQueryService
+git branch --<Old_Name> <New_Name>
+git branch -m <Old_Name> <New_Name>
+
+####AFTER CLONING AND BUILD IF YOU GET DELETED AND UNTRACKED FILES####
+=========================================================================
+git pull
+git fetch --all  //
+git branch -r 
+
