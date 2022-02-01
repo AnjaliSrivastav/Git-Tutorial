@@ -1,2 +1,2 @@
 # Git-Tutorial
-This repository is about git commands which I use day to day in my projects 
+This repository is about git info which I learn till this point. 
