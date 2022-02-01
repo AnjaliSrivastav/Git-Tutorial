@@ -15,6 +15,18 @@ Steps Used for merging your branch to another branch(Lengthy Approach but Withou
 ->if it builds successfully in local, commit the changes,push it and build it.
 
 
+
+#Create a New Branch
+=========================
+# Two-step method
+-------------------------
+git branch NEW-BRANCH-NAME  //this command only creates the new branch. You’ll need to run git checkout NEW-BRANCH-NAME to switch to it.
+git checkout NEW-BRANCH-NAME
+
+# Shortcut
+----------------
+git checkout -b NEW-BRANCH-NAME
+
 ## To clear te console of git 
 ==================================
 Use a shortcut key (CTRL + L in my case) or the command input box to execute "Terminal: Clear"
